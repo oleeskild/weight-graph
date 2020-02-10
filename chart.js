@@ -9,12 +9,12 @@ function initChart(data){
         name: x,
         data: dataToToday.map((y, i)=>{ 
             let weight = y[x];
-               if(!weight && i>0) {
-                    weight = data[i-1][x] || "";
-                   dataToToday[i][x] = weight;
-               }
-               return Number(weight.replace(",","."))
+            if(!weight && i>0) {
+                weight = data[i-1][x] || "";
+                dataToToday[i][x] = weight;
             }
+            return Number(weight.replace(",","."))
+        }
         )
     }));
     var options = {
